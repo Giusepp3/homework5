@@ -8,7 +8,12 @@ namespace lista_ptr{
 	}
 	
 	lista::lista(const lista & l){
-		
+		nodo* t=testa;
+		while(t){
+			T e;
+			l.pop(e);
+			append(e);
+		}
 	}
 	
 	lista::~lista(){
