@@ -23,7 +23,7 @@ using namespace cards;
 
 namespace lista_ptr{
 	
-	typedef tessera T;
+	typedef tessera* T;
 	
 	struct nodo;
 	
@@ -37,7 +37,7 @@ namespace lista_ptr{
 		nodo* testa;
 		nodo* coda;
 		int sz;
-		void print_ptr(const T * e)const{cout << e;}
+		void print_ptr(const T e)const{cout << *e;}
 		bool insert(const int, const T &) throw(const char*);
 		public:
 		lista();
@@ -51,6 +51,7 @@ namespace lista_ptr{
 		bool insert_at_pos(const int, const T & e);
 		bool empty()const{return sz==0;}
 		bool full()const{return false;} //lista dinamica
+		int get_sz()const{return sz;}
 		
 	};
 	

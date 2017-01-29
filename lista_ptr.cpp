@@ -23,7 +23,7 @@ namespace lista_ptr{
 	void lista::print()const{
 		nodo* t=testa;
 		while(t){
-			print_ptr(&t->elem);
+			print_ptr(t->elem);
 			t=t->next;
 		}
 	}
@@ -37,12 +37,14 @@ namespace lista_ptr{
 			testa = coda = t;
 			t->next=0;
 			t->prec=0;
+			sz++;
 		}
 		else {
 			testa->prec=t;
 			t->next=testa;
 			testa=t;
 			t->prec=0;
+			sz++;
 		}
 		
 		return true;
@@ -61,6 +63,7 @@ namespace lista_ptr{
 		testa=testa->next;
 		delete t;
 		return true;
+		sz--;
 	}
 	
 	bool lista::top(T & e)const{
@@ -78,11 +81,13 @@ namespace lista_ptr{
 			if(empty()){
 			testa = coda = t;
 			t->next=t->prec=0;
+			sz++;
 		}
 		else{
 			coda->next=t;
 			t->next=0;
 			t->prec=coda;
+			sz++;
 		}
 		} catch(bad_alloc & b){
 			cout << "Rilevato errore " << b.what();
@@ -114,6 +119,7 @@ namespace lista_ptr{
 			n->prec=t;
 			t1->prec=n;
 			n->next=t1;
+			sz++;
 			return true;
 				
 			} catch(bad_alloc){

@@ -22,10 +22,10 @@ namespace cards{
 			char* nome;
 			char* cognome;
 		protected:
-			void serialize(ofstream & os)const;
-			void deserialize(ifstream & in);
-			void read(istream & in);
-			void print(ostream & os)const;
+			virtual void serialize(ofstream & os)const;
+			virtual void deserialize(ifstream & in);
+			virtual void read(istream & in);
+			virtual void print(ostream & os)const;
 		public:
 			tessera();
 			tessera(const char* nome, const char* cognome);

@@ -26,10 +26,10 @@ namespace cards{
 			int giorno;
 			int mese;
 		public: //dovrebbe essere protected
-			void print(ostream & os)const;
-			void read(istream & in);
-			void serialize(ofstream & of)const;
-			void deserialize(ifstream & in);
+			virtual void print(ostream & os)const;
+			virtual void read(istream & in);
+			virtual void serialize(ofstream & of)const;
+			virtual void deserialize(ifstream & in);
 		public:
 			t_sanitaria();
 			t_sanitaria(const char* nome, const char* cognome, const char* cf, const int dd, const int mm, const int yy);
